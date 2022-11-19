@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.220.202:3306/mysql?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: mysql
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true # GET, POST 뿐 만 아니라 PUT, DELETE 등의 메서드도 사용하기 위한 설정
+
+#loggin:
