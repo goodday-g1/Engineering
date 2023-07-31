@@ -11,7 +11,7 @@
   1.3 [PID 변수 찾기](#3-pid-변수-찾기)   
   1.4 [테스트 파일 만들기](#4-테스트-파일-만들기)  
   1.5 [Jupyter Notebook](#5-jupyter-notebook-설치하기)  
-2. [하이퍼데이터](#hyperdata-설치)
+2. [Solution-System_Engineering](#hyperdata-설치)
 3. [VI 편집기](#ⅲ-vi-편집기)
 4. [DOCKER](#ⅳ-docker)
 5. [쿠버네티스](#ⅴ-쿠버네티스)  
