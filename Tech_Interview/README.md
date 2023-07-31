@@ -21,9 +21,12 @@ Tech Interview 준비를 위해 질문으로 나올 만한 부분들을 정리�
   - 해당 기능이 코드에 어떻게 구현되어 있나요?
 
 - Stateful Join: 코드에서 사용된 Stateful Join에 대해 설명하세요.  
-  > Stateful Join은 데이터 처리 과정에서 상태를 유지하고 조인을 수행하는 방식입니다.  
-  > 코드에서는 고객, 계좌, 거래내역 데이터를 처리하기 위해 Stateful Join을 사용하고 있습니다.  
+  > Stateful Join은 데이터 처리 과정에서 2개 이상의 DataStream 상태를 유지하고 조인을 수행하는 방식입니다.  
+  > Stateful Join을 수행하는 과정에서는 메모리 내에 상태(State)를 유지해야 하고, 이러한 상태는 조인 연산을 수행하는 데 사용되며,
+  > 대개 Hash Table이나 상태 저장소 등의 메모리 구조를 활용하여 유지됩니다.  
+  > 코드에서는 고객, 계좌, 거래내역 데이터를 처리하기 위해 Stateful Join을 사용하고 있고,
   > 특정 키를 기준으로 데이터를 조인하기 위해 특정 상태를 유지하며 데이터를 처리합니다.
+  > 이 때, 데이터 처리 간 공간복잡도를 최소화하기 위해 Flink Stateful Join은 처리된 Key에 대해서 Clearing 작업을 수행합니다.  
   - 어떤 상황에서 Stateful Join을 사용하나요?
   - Stateful Join을 구현하기 위해 어떤 데이터 처리 방식을 사용했나요?
   - Stateful Join 외에 또 어떤 Join 방식이 있을까요?
