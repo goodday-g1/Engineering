@@ -1,0 +1,26 @@
+# For USE : docker compose -f ./docker_registry_gui.yaml up -d
+
+version: '2.0'
+services:
+  registry:
+    image: registry:220810
+    volumes:
+      - ./registry-data:/docker-repo/docker/registry/v2
+    networks:
+      - registry-ui-net
+
+  ui:
+    image: joxit/docker-registry-ui:latest
+    ports:
+      - 93:93
+    environment:
+      - REGISTRY_TITLE=My Private Docker Registry
+      - NGINX_PROXY_PASS_URL=http://registry:30093
+      - SINGLE_REGISTRY=true
+    depends_on:
+      - registry
+    networks:
+      - registry-ui-net
+
+networks:
+  registry-ui-net:
